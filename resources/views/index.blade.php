@@ -10,8 +10,9 @@
 
     <ul>
         @foreach($movies as $movies)
-        <li>{{$movies->name}}</li>
+        <li>{{$movies->name}} <a href="{{route('edit', $movie)}}"></a></li>
         @endforeach
     </ul>
+  
 </body>
 </html>

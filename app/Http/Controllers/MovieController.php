@@ -47,7 +47,8 @@ class MovieController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $movie = Movie::findOrFail($id);
+        return view("edit", compact("movie"));
     }
 
     /**
