@@ -56,7 +56,11 @@ class MovieController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+          $movie = Movie::findOrFail($id);
+
+          $movie->update($request->all());
+
+         return redirect()->route("index");
     }
 
     /**
@@ -64,6 +68,10 @@ class MovieController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+          $movie = Movie::findOrFail($id);
+
+          $movie->delete();
+
+        return redirect()->back();
     }
 }
